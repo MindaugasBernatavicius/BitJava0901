@@ -1,5 +1,7 @@
 package cf.mindaugas.app;
 
+import java.util.Scanner;
+
 public class HelloWorld {
     public static void main(String[] args) {
 
@@ -72,6 +74,150 @@ public class HelloWorld {
         System.out.println("ABC".length());
         System.out.println("ABC".replace("A","Z"));
         System.out.println("ABC".replace('A', 'Z'));
+
+        // ... StringBiulder
+        // ... imutability of strings
+        System.out.println("... StringBiulder");
+        String s4 = "ABC";
+        String s5 = s4;
+        System.out.println(System.identityHashCode(s4));
+        System.out.println(System.identityHashCode(s5));
+        s4 += "D"; // ... pridėjus raidę, buvo sukuratas naujas kintamasis
+        System.out.println(System.identityHashCode(s4));
+
+        // ... using StringBuilder
+        StringBuilder builder = new StringBuilder();
+        builder.append("abc ");
+        builder.append("abc ");
+        builder.append("abc ");
+        builder.append("abc ");
+        builder.append("abc ");
+        builder.append("abc ");
+        System.out.println(builder.toString());
+
+        // ... If condition
+        int age = 17;
+        if(age > 18){ // amžiaus daugiau nei 18-niolika
+            System.out.println("Galima pirkti alkoholį");
+        } else { // ... jei ne
+            System.out.println("Negalima pirkti alkoholio");
+        }
+
+        if(age > 18){ // amžiaus daugiau nei 18-niolika
+            System.out.println("Galima pirkti alkoholį");
+        } else if(age == 18) {
+            System.out.println("Galima pirkti alkoholį");
+        } else { // ... jei ne
+            System.out.println("Negalima pirkti alkoholio");
+        }
+
+        // ... panaikingame else if panaudoję >= (daugiau arba lygu)
+        // (age > 18 || age = 18) == (age >= 18)
+        if(age >= 18){ // amžiaus daugiau nei 18-niolika
+            System.out.println("Galima pirkti alkoholį");
+        } else { // ... jei ne
+            System.out.println("Negalima pirkti alkoholio");
+        }
+
+        age = 21;
+        if(age < 18){
+            System.out.println("Negalima nei prikti nei gerti");
+        } else if(age >= 18 && age < 21){
+            System.out.println("Galima gerti, bet negalima pirkti");
+        } else {
+            System.out.println("Galima gerti, ir pirkti");
+        }
+
+        // ... switch()
+        System.out.println("... switch()");
+        String name = "Petras";
+        switch (name){ // char, byte, short, int, enum, String
+            case "Jonas":
+                System.out.println("Sveikas Jonai");
+                break; // būtinas jei norime tik vieną
+            case "Mindaugas":
+                System.out.println("Sveikas Mindaugai");
+                break;
+            default:
+                System.out.println("Sveiki!");
+        }
+
+        double d3 = 55.5;
+        // switch(d3){ } // ... Incompatible types. Found: 'double', required: 'char, byte, short, int, Character, Byte, Short, Integer, String, or an enum'
+        int i4 = 5;
+        switch (i4){
+            case (short)5: System.out.println("Shortai!");
+        }
+
+        // ... Loops
+        // ... while
+        System.out.println("... while");
+        int counter = 5;
+        while(counter > 0){
+            System.out.println(counter);
+            counter = counter - 1;
+        }
+        // while(true){}
+
+        int x1 = 5;
+        for( ; x1 > 0; ){
+            System.out.println(x1);
+            // ..
+            // ..
+            // ..
+            x1 = x1 - 1;
+        }
+        // infinite loop
+        // for( ; ; ){
+        //     System.out.println("Labas");
+        // }
+
+        for(x1 = 5; x1 > 0 ; )
+            System.out.println("Labas : " + --x1);
+            System.out.println("Labas už ciklo"); // nėra ciklo dalis
+
+        for (int k = 0; k < 5; k++) {
+            System.out.println(">");
+            // k++ / --k
+        }
+
+        // ... Getting user input
+        // ... import java.util.Scanner;
+        // Scanner sc = new Scanner(System.in);  // Create a Scanner object
         //
+        // System.out.print("Enter username, please: ");
+        // String userName = sc.nextLine();  // Read user input - laukia vartotojo įvesties ir enter paspausto
+        //
+        // System.out.print("Enter password, please: ");
+        // String password = sc.nextLine();  // Read user input - laukia vartotojo įvesties ir enter paspausto
+        //
+        // System.out.println("Username is: " + userName + " and the password is: " + password);  // Output user input
+
+        // ... do-while
+        System.out.println("... do-while");
+        Scanner sc1 = new Scanner(System.in);
+        String userInput = null;
+        String psw = "poiuytr";
+        do {
+            System.out.print("Please enter password: ");
+            userInput = sc1.nextLine();
+        } while(!userInput.equals(psw)); // while userinput is not equal to password, do x
+        System.out.println("You are logged in!");
+
+        // ... for ciklo sudėtingesnė sintaksė
+        int abc = 5;
+        for (int k = 0, k2 = 0; k < 5 && k2 < 9 ; k++, k2++, abc++) { }
+
+        // ... enhanced for
+        System.out.println("... enhanced for");
+        String[] myAwesomeArray = { "1", "2", "3", "4", "5" }; // masyvo deklaracija ir inicializacija
+        for (String manoPasirinktasTarpinioKintamojoVardas : myAwesomeArray) {
+            System.out.println(manoPasirinktasTarpinioKintamojoVardas);
+        }
+
+        // ... equivalent to enhanced for
+        for(int u = 0; u < myAwesomeArray.length; u++){
+            System.out.println(myAwesomeArray[u]);
+        }
     }
 }
