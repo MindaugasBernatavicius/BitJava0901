@@ -1,5 +1,6 @@
 package cf.mindaugas.app;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class HelloWorld {
@@ -335,5 +336,129 @@ public class HelloWorld {
         }
 
         // ... kaip iš jau turimo masyvo viršuje, pasigaminti antrą masyvą, kuris turėtų tik lyginius skaičius.
+        // ... suskaičiuojame kiek yra lyginių skaičių
+        int[] intArr4 = { 4, 1, 2, 5, 6 };
+        int evenCounter = 0;
+        for (int k = 0; k < intArr4.length; k++) {
+            if (intArr4[k] % 2 == 0) evenCounter++;
+        }
+        System.out.println(evenCounter);
+
+        // pasideklaruojame naują masyvą tokio dydžio kiek yra lyginių skaitmenų
+        int[] arrWithEvenNumbers = new int[evenCounter];
+        System.out.println(Arrays.toString(arrWithEvenNumbers));
+
+        // pridedame juos į naują masyvą
+        int jidx = 0;
+        for (int k = 0; k < intArr4.length; k++) {
+            if (intArr4[k] % 2 == 0) {
+                arrWithEvenNumbers[jidx] = intArr4[k];
+                jidx++;
+            }
+        }
+        System.out.println(Arrays.toString(arrWithEvenNumbers));
+
+        String[] sArr = {"A", "B", "C"};
+        System.out.println(Arrays.toString(sArr));
+        for (String s: sArr) {
+            System.out.println("-->" + s);
+        }
+
+        // // ... Lauryno klausimas: kodėl pirmas masyvo stringas tuščias lieka
+        // // .... Scanner.nextInt method does not read the newline character in your input created by hitting "Enter,"
+        // Scanner s = new Scanner(System.in);
+        // System.out.println("Enter the required size of the array: ");
+        // // Jei naudojame nextLine() po nextInt(), tai po pastarojo reikia "suvalgyti" newline simbolį
+        // // ... kuris atsiranda paspaudus enter. s.nextLine() jį automatiškai suvalgo, todėl po jo nereikia
+        // // ... nereikia papildomo s.nextLine()
+        // int arrDydis = s.nextInt(); s.nextLine();
+        // System.out.println(arrDydis);
+        // String[] myArray = new String[arrDydis];
+        // System.out.println("Enter the elements of the array one by one ");
+        // for(int a = 0; a < arrDydis; a++) {
+        //     myArray[a] = s.nextLine();
+        // }
+        // System.out.println("Contents of the array are: "+ Arrays.toString(myArray));
+
+        // // ... Lauryno klausimas: kodėl veikia gerai su nextInt()
+        // Scanner s6 = new Scanner(System.in);
+        // System.out.println("Enter the required size of the array: ");
+        // int arrDydis6 = s6.nextInt();
+        // System.out.println(arrDydis6);
+        // int[] myArray6 = new int[arrDydis6];
+        // System.out.println("Enter the elements of the array one by one ");
+        // for(int a = 0; a < arrDydis6; a++) {
+        //     myArray6[a] = s6.nextInt();
+        // }
+        // System.out.println("Contents of the array are: "+ Arrays.toString(myArray6));
+
+        // ... sprendžiame lyginių skaičių išfiltravimo užduotį "hackiniu" būdu:
+        int[] intArr5 = { 4, 1, 2, 0, 6 };
+        //...
+        int[] filtruotasMasyvas = { 4, 2, 0, 6, -1 };
+        System.out.println("Contents of the array are: "+ Arrays.toString(filtruotasMasyvas));
+        int counter2 = 0;
+        for (int k = 0; k < filtruotasMasyvas.length; k++) {
+            if(filtruotasMasyvas[k] != -1){
+                counter2++;
+            } else {
+                break;
+            }
+        }
+        System.out.println("Kiek buvo išfiltruota: " + counter2);
+
+        // ... narių apkeitimas: kaip padaryti, kad "A", "B", "C", "D" taptų "A", "C", "B", "D"
+        String[] arrTwoItems = { "A", "B", "C", "D" };
+
+        // ... pradėkime nuo paprastesnio varianto
+        // ... swap - apkeitimas kintamūjų
+        char a = 'a', b = 'b';
+        System.out.println("a: " + a);
+        System.out.println("b: " + b);
+
+        char tmp = b;
+        b = a;
+        a = tmp;
+        System.out.println("a: " + a);
+        System.out.println("b: " + b);
+
+        // ... grįžtame prie originalios problemos
+        int originalPosition = 1;
+        int newPosition = 2;
+        String [] myArray = {"A", "B", "C", "D"};
+        String temp = myArray[originalPosition];
+        myArray[originalPosition] = myArray[newPosition];
+        myArray[newPosition] = temp;
+        System.out.println(Arrays.toString(myArray));
+
+        // ... rikiavimas (bubble sort algoritmas)
+        int[] intArr6 = { 4, 1, 2, 0, 6 }; // rezultatas turėtų būti: 0, 1, 2, 4, 6
+        System.out.println("Prieš rikiavimą: " + Arrays.toString(intArr6));
+        for (int k = 0; k < intArr6.length - 1; k++) {
+            for(int kidx = 0; kidx < intArr6.length - 1; kidx++){
+                if(intArr6[kidx] > intArr6[kidx + 1]){
+                    int temporary = intArr6[kidx + 1];
+                    intArr6[kidx + 1] = intArr6[kidx];
+                    intArr6[kidx] = temporary;
+                }
+            }
+        }
+        System.out.println("Po rikiavimo: " + Arrays.toString(intArr6));
+
+        // ... linijinė paieška
+        String[] arrOfStrings = { "Mindaugas", "Petras", "Tomas", "Antanas" };
+        String paieškomasis = "Antanas";
+        boolean atsakymas = false;
+        for (int k = 0; k < arrOfStrings.length; k++) {
+            if(arrOfStrings[k].equals(paieškomasis)) {
+                atsakymas = true;
+            }
+        }
+        System.out.println("Ar " + paieškomasis + " yra sąraše: " + atsakymas);
+
+        // 2D array
+        int[][] _2dArr1 = new int[2][2];
+        int[][] _2dArr2 = { {1, 2},
+                            {3, 4} };
     }
 }
