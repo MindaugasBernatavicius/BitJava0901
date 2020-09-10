@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class HelloWorld {
     public static void main(String[] args) {
-
         // 0. Hw
         System.out.println("Hello, World!");
         System.out.println("Hello, World!");
@@ -432,20 +431,30 @@ public class HelloWorld {
         System.out.println(Arrays.toString(myArray));
 
         // ... rikiavimas (bubble sort algoritmas)
-        int[] intArr6 = { 4, 1, 2, 0, 6 }; // rezultatas turėtų būti: 0, 1, 2, 4, 6
+        System.out.println("... rikiavimas (bubble sort algoritmas)");
+        // int[] intArr6 = { 4, 1, 2, 0, 6, 3 }; // rezultatas turėtų būti: 0, 1, 2, 4, 6
+        int[] intArr6 = { 5, 4, 3, 2, 1 };
         System.out.println("Prieš rikiavimą: " + Arrays.toString(intArr6));
+        int iterationCounter = 0, swapCounter = 0;
+
         for (int k = 0; k < intArr6.length - 1; k++) {
-            for(int kidx = 0; kidx < intArr6.length - 1; kidx++){
+            for(int kidx = 0; kidx < intArr6.length - 1 - k; kidx++) {
+                iterationCounter++;
                 if(intArr6[kidx] > intArr6[kidx + 1]){
+                    swapCounter++;
                     int temporary = intArr6[kidx + 1];
                     intArr6[kidx + 1] = intArr6[kidx];
                     intArr6[kidx] = temporary;
                 }
             }
         }
+
+        System.out.println("Iteracijų : " + iterationCounter);
+        System.out.println("Apkeitimų vietomis : " + swapCounter);
         System.out.println("Po rikiavimo: " + Arrays.toString(intArr6));
 
         // ... linijinė paieška
+        System.out.println(" ... linijinė paieška");
         String[] arrOfStrings = { "Mindaugas", "Petras", "Tomas", "Antanas" };
         String paieškomasis = "Antanas";
         boolean atsakymas = false;
@@ -458,7 +467,104 @@ public class HelloWorld {
 
         // 2D array
         int[][] _2dArr1 = new int[2][2];
+        _2dArr1[0][0] = 1;
+        _2dArr1[0][1] = 2;
+        _2dArr1[1][0] = 3;
+        _2dArr1[1][1] = 4;
+
         int[][] _2dArr2 = { {1, 2},
                             {3, 4} };
+
+        // ... pasiekiame kiekvieną "giliausią narį"
+        for (int k = 0; k < _2dArr1.length; k++) {
+            for (int l = 0; l < _2dArr1[k].length; l++) {
+                System.out.println("[" + k + "][" + l + "]" + _2dArr1[k][l]);
+            }
+        }
+        System.out.println("------------");
+        for (int k = 0; k < _2dArr2.length; k++) {
+            for (int l = 0; l < _2dArr2[k].length; l++) {
+                System.out.println("[" + k + "][" + l + "]" + _2dArr2[k][l]);
+            }
+        }
+
+        // ... Iš 2D masyvo padaryti 1D ir pan
+        // ... (darykime prielaidą, kad vienodo ilgio visi sub-masyvai)
+        int[][] _2dArr3 = { {1, 2}, {3, 4} }; // { 1, 2, 3, 4}
+        int len = _2dArr3.length * _2dArr3[0].length;
+        int[] _1dFrom2d = new int[len];
+
+        int count = 0;
+        for (int k = 0; k < _2dArr3.length; k++) {
+            for (int l = 0; l < _2dArr3[k].length; l++) {
+                _1dFrom2d[count] = _2dArr3[k][l];
+                count++;
+            }
+        }
+        System.out.println("----------------");
+        System.out.println("1D: " + Arrays.toString(_1dFrom2d));
+
+
+        // ... jagged arrays
+        int[][][] _3d = new int[2][][];
+        _3d[0] = new int[2][];
+        _3d[1] = new int[15][];
+
+        System.out.println("Funkcijos");
+        // ... funkcijos kvietimas
+        mySecondFunction();
+        sum(5, 6);
+        sum(5.0, 6);
+
+        System.out.println("factorialIterative(4): " + factorialIterative(4));
+        System.out.println("factorialIterative(6): " + factorialIterative(6));
+        System.out.println("factorialIterative(12): " + factorialIterative(12));
+
+        System.out.println("factorialRecursive(4): " + factorialRecursive(4));
+        System.out.println("factorialRecursive(6): " + factorialRecursive(6));
+        System.out.println("factorialRecursive(12): " + factorialRecursive(12));
+    }
+
+    // TODO ::
+    public static int factorialRecursive(int i){
+        if(i <= 1)
+            return 1;
+        return factorialRecursive(i - 1) * factorialRecursive(i - 2);
+    }
+
+    public static int factorialIterative(int i){
+        // 4 * 3 * 2 * 1 = 4!
+        int res = 1, stopCondition = i;
+        for (int j = 0; j < stopCondition; j++){
+            res = res * i; // 4 * 3
+            i--;
+        }
+        return res;
+    }
+
+    // Funkcijos deklaracija:
+    // ... be parametrų f-ja
+    // ... nieko negražina, tik padaro side-effect
+    public static void mySecondFunction(){
+        System.out.println("Side-effect");
+        // return
+    }
+
+    // ... overloaded functions
+    public static void sum(int i, int j){
+        System.out.println("Suma:" + (i + j));
+    }
+
+    public static void sum(double d1, double d2){
+        System.out.println("Suma:" + (d1 + d2));
+    }
+
+    // ... pure function.
+    public static long sum(long l1, long l2){
+        return l1 + l2;
+    }
+
+    public static void myThirdFunction2(int i, int j){
+        System.out.println("Suma:" + (i + j));
     }
 }
