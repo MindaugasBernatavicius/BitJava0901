@@ -520,16 +520,88 @@ public class HelloWorld {
         System.out.println("factorialIterative(6): " + factorialIterative(6));
         System.out.println("factorialIterative(12): " + factorialIterative(12));
 
+        System.out.println("factorialRecursive(0): " + factorialRecursive(0));
+        System.out.println("factorialRecursive(1): " + factorialRecursive(1));
+        System.out.println("factorialRecursive(2): " + factorialRecursive(2));
         System.out.println("factorialRecursive(4): " + factorialRecursive(4));
         System.out.println("factorialRecursive(6): " + factorialRecursive(6));
         System.out.println("factorialRecursive(12): " + factorialRecursive(12));
+
+        System.out.println("------ Fibonacci ------");
+        // 0, 1, 1, 2, 3
+        System.out.println("fibonacciIterative(4): " + fibonacciIterative(4));
+        System.out.println("fibonacciRecursive(4): " + fibonacciRecursive(4));
+
+        System.out.println("------ Passing function parameters ------");
+        int bandomsisTriušis = 5;
+        System.out.println("bandomsisTriušis: " + bandomsisTriušis);
+        addOne(bandomsisTriušis);
+        System.out.println("bandomsisTriušis: " + bandomsisTriušis);
+
+        int[] pairOfNumbers = {2, 1};
+        System.out.println("pairOfNumbers: " + Arrays.toString(pairOfNumbers));
+        swapPair(pairOfNumbers);
+        System.out.println("pairOfNumbers: " + Arrays.toString(pairOfNumbers));
+
+
+        int res;
+        try {
+            // ... pavojingas kodas
+            res = 1 / 0; // ArithmeticException: / by zero
+        // } catch (Exception e){
+        //     System.out.println("Įvyko klaida!");
+        } finally {
+            // finally blokas bus iškviestas, net jei darysime res = 1 / 1;
+            System.out.println("Finally blokas!");
+        }
+
+        System.out.println("Programos pabaiga!");
     }
 
-    // TODO ::
+    // Checked vs. unchecked excaptions
+
+
+    public static void swapPair(int[] arr){
+        int tmp = arr[0];
+        arr[0] = arr[1];
+        arr[1] = tmp;
+    }
+
+    // Parameter passing
+    // public static void addOne(Integer i){
+    //     ++i;
+    //     System.out.println("bandomsisTriušis: " + i);
+    // }
+
+    public static void addOne(int i){
+        ++i;
+        System.out.println("bandomsisTriušis: " + i);
+    }
+
+    // Recursion
+    public static int fibonacciRecursive(int n) {
+        if (n <= 1) return n;
+        // fibN = fibN-1 + fibN-2
+        return fibonacciRecursive(n - 1)
+                + fibonacciRecursive(n - 2);
+    }
+
+    public static int fibonacciIterative(int n) {
+        if(n <= 1) return n;
+        int fib = 1;
+        int prevFib = 1;
+
+        for(int i = 2; i < n; i++) {
+            int temp = fib;
+            fib += prevFib;
+            prevFib = temp;
+        }
+        return fib;
+    }
+
     public static int factorialRecursive(int i){
-        if(i <= 1)
-            return 1;
-        return factorialRecursive(i - 1) * factorialRecursive(i - 2);
+        if(i <= 1) return 1; // base case
+        return i * factorialRecursive(i - 1); // recursive step
     }
 
     public static int factorialIterative(int i){
