@@ -1,6 +1,8 @@
 package cf.mindaugas.app;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -658,8 +660,27 @@ public class HelloWorld {
             System.err.println("Bendrinė klaida");
         }
 
+        // ... Network I/O
+        try {
+            URL url = new URL("https", "www.delfi.lt", "/");
+            BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+
+            String inputLine = in.readLine();
+            while (inputLine != null) {
+                System.out.println(inputLine);
+                inputLine = in.readLine();
+            }
+        } catch(MalformedURLException e){
+            e.getStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
         System.out.println("Programos pabaiga!");
     }
+
+
     // Exception catching order
     public static void u(int param) throws Exception {
         switch (param){
