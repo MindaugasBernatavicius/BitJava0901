@@ -1,5 +1,7 @@
 package cf.mindaugas.app.oopintro;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         // Tipas objektoPavadinimas = new Konstruktorius();
@@ -27,37 +29,20 @@ public class Main {
         System.out.println("Darbuotojo vardas: " + employee4.name
                                     + ", pavardė " + employee4.surname
                                     + ", amžius " + employee4.getAge());
+
+
+        // Objektų masyvai
+        Employee[] employees = new Employee[2];
+        employees[0] = employee4;
+        employees[1] = new Employee("Mr.", "T");
+
+        Employee[] employees2 = {
+                employee5,
+                employee4,
+                new Employee("Jack", "Daniels")
+        };
+
+        System.out.println("Employees array contains: " + Arrays.toString(employees));
+        System.out.println("Employees array contains: " + Arrays.toString(employees2));
     }
-}
-
-class Employee {
-    public void setAge(int age){
-        if(age <= 0 || age > 125){
-            System.out.println("Please provide valid age!");
-        } else {
-            this.age = age;
-        }
-    }
-
-
-    // fieldai, laukai, savybės
-    String name;
-    String surname;
-    private int age;
-
-    // ... overloaded konstruktorius
-    // ... be parametrų
-    public Employee(){}
-
-    // ... parametrizuotas konstruktorius
-    public Employee(String n, String s) {
-        this.name = n;
-        this.surname = s;
-    }
-
-    public int getAge(){
-        return this.age;
-    }
-
-
 }
