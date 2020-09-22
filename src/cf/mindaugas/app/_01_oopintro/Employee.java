@@ -1,4 +1,4 @@
-package cf.mindaugas.app.oopintro;
+package cf.mindaugas.app._01_oopintro;
 
 public class Employee {
     // fieldai, laukai, savybės
@@ -30,7 +30,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "{ name: " + name + ", surname: " + surname + ", age: " + age + "}";
+        return "{name: " + name + ", surname: " + surname + ", age: " + age + "}";
     }
 
     // komentaras

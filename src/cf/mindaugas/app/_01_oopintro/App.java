@@ -1,4 +1,4 @@
-package cf.mindaugas.app.oopintro;
+package cf.mindaugas.app._01_oopintro;
 
 public class App {
     public static void main(String[] args) {

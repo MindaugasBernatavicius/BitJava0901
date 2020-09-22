@@ -1,4 +1,4 @@
-package cf.mindaugas.app.oopintro;
+package cf.mindaugas.app._01_oopintro;
 
 import java.util.Arrays;
 
@@ -44,5 +44,7 @@ public class Main {
 
         System.out.println("Employees array contains: " + Arrays.toString(employees));
         System.out.println("Employees array contains: " + Arrays.toString(employees2));
+        System.out.println(employees2[0]);
+        System.out.println(employee4);
     }
 }
