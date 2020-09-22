@@ -17,6 +17,27 @@ public class Main {
         // 3.
         Janitor j1  = new Janitor(16, "Jonas", 4654, new Broom(55.99));
         System.out.println("Objekto viduriai: " + j1);
+
+        // 4. Init flight object
+        Person p3 = new Person(77, "Marytė");
+        Person p4 = new Person(66, "Petras");
+
+        Employee e3 = new Employee(22, "Jonas", 14666);
+        Employee e4  = new Employee(58, "Petras", 456465);
+
+        Flight f1 = new Flight(2, new Person[]{p3, p4}, new Employee[]{e3, e4});
+    }
+}
+
+class Flight {
+    private int flightNumber;
+    private Person[] passengers;
+    private Employee[] crew;
+
+    public Flight(int flightNumber, Person[] passengers, Employee[] crew) {
+        this.flightNumber = flightNumber;
+        this.passengers = passengers;
+        this.crew = crew;
     }
 }
 
