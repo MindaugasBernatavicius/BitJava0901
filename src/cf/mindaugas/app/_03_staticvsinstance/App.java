@@ -33,6 +33,11 @@ public class App {
 class Person {
     static int age;
 
+    String name;
+    static void method(){
+        // name; // Non-static field 'name' cannot be referenced from a static context
+    }
+
     public int getAge() {
         return this.age;
     }
