@@ -86,6 +86,18 @@ public class App {
             }
         });
         System.out.println(employees2);
+
+        LinkedList<Employee> llEmployee = new LinkedList<>();
+        llEmployee.add(new Employee(15, 600));
+
+        Stack<Employee> stackOfEmpl = new Stack<>();
+        stackOfEmpl.push(new Employee(15, 600));
+        stackOfEmpl.push(new Employee(25, 6564));
+
+        while(!stackOfEmpl.empty()) {
+            System.out.println(stackOfEmpl.pop());
+        }
+
     }
 }
 
