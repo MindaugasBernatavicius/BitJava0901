@@ -11,7 +11,11 @@ public class PolymorphicArrays {
         }
     }
 }
+
 class Person {
-    public void doSomething(){}
+    public void doSomething() {
+    }
 }
-class Employee extends Person { }
+
+class Employee extends Person {
+}

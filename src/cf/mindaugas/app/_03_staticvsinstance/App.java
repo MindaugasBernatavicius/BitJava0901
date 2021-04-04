@@ -34,13 +34,15 @@ class Person {
     static int age;
 
     String name;
-    static void method(){
+
+    static void method() {
         // name; // Non-static field 'name' cannot be referenced from a static context
     }
 
     public int getAge() {
         return this.age;
     }
+
     public void setAge(int age) {
         this.age = age;
     }

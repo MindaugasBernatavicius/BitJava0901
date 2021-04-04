@@ -31,11 +31,11 @@ public class UsageOfPolymorphismWithInterfaces {
     public static void main(String[] args) {
         // Užduotis, su savo parašytu rikiavimo metodu išrikiuokite masyvą custom objektų
         Vehicle[] carPark = {
-            new Vehicle(15261, 100),
-            new Vehicle(545646, 150),
-            new Vehicle(794, 200),
-            new Vehicle(454515, 600),
-            new Vehicle(454515, 300),
+                new Vehicle(15261, 100),
+                new Vehicle(545646, 150),
+                new Vehicle(794, 200),
+                new Vehicle(454515, 600),
+                new Vehicle(454515, 300),
         };
         System.out.println("Before sorting: " + Arrays.toString(carPark));
         sortv2(carPark);
@@ -66,13 +66,16 @@ interface ComparebleByTwoProps {
 class Vehicle implements ComparebleByTwoProps, CustomComparable {
     int price;
     int horsePower;
+
     public Vehicle(int price, int hp) {
         this.price = price;
         this.horsePower = hp;
     }
+
     public int getPrice() {
         return price;
     }
+
     @Override
     public String toString() {
         return "{ price : " + price + ", hp : " + horsePower + " }";
@@ -81,21 +84,21 @@ class Vehicle implements ComparebleByTwoProps, CustomComparable {
     @Override
     public boolean compare(CustomComparable v) {
         // car1.compare(car2)
-        return this.price <= ((Vehicle)v).price;
+        return this.price <= ((Vehicle) v).price;
         // return this.price > ((Vehicle)v).price;
     }
 
     @Override
     public int compare(ComparebleByTwoProps v) {
-        if(this.price == ((Vehicle)v).price){
-            if(this.horsePower > ((Vehicle)v).horsePower) {
+        if (this.price == ((Vehicle) v).price) {
+            if (this.horsePower > ((Vehicle) v).horsePower) {
                 return 1;
-            } else if (this.horsePower < ((Vehicle)v).horsePower){
+            } else if (this.horsePower < ((Vehicle) v).horsePower) {
                 return -1;
             } else {
                 return 0;
             }
-        } else if(this.price > ((Vehicle)v).price){
+        } else if (this.price > ((Vehicle) v).price) {
             return 1;
         } else {
             return -1;
@@ -121,6 +124,6 @@ class Cat implements CustomComparable {
 
     @Override
     public boolean compare(CustomComparable c) {
-        return this.age < ((Cat)c).age;
+        return this.age < ((Cat) c).age;
     }
 }

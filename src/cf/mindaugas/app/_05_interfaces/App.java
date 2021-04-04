@@ -29,8 +29,9 @@ class Bank implements Printable, Comparable {
     public void print() {
         System.out.println(
                 "{ totalAmountOfMoney : " + totalAmountOfMoney
-                + ", employeeCount: " + employeeCount + "}");
+                        + ", employeeCount: " + employeeCount + "}");
     }
+
     @Override
     public int compareTo(Object o) {
         return 0;

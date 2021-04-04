@@ -42,14 +42,14 @@ public class HelloWorld {
 
         // cast'ing
         double d = 5.9;
-        int di = (int)d;
+        int di = (int) d;
         System.out.println(di); // skaičius po kablelio yra numetamas
 
         float f1 = 5.9f;
         double d1 = f1; // priskirti galime be cast'o
 
         double d2 = 5.9;
-        float f2 = (float)d2; // reikia castinti,nes duoble yra didesnis (rizika prarasti duomenis)
+        float f2 = (float) d2; // reikia castinti,nes duoble yra didesnis (rizika prarasti duomenis)
 
         // String
         String s1 = "\uD83E\uDDE0 \uD83E\uDDB7 \uD83E\uDDB4";
@@ -62,7 +62,7 @@ public class HelloWorld {
         System.out.println(s2.equals(s3));
         System.out.println(!
                 (s2.equals(s3) // true ==> !true == false
-            ));
+                ));
 
         // ... int equality
         int i1 = 10;
@@ -77,7 +77,7 @@ public class HelloWorld {
         System.out.println("ABC".toLowerCase());
         System.out.println("ABC".toLowerCase().endsWith("bc"));
         System.out.println("ABC".length());
-        System.out.println("ABC".replace("A","Z"));
+        System.out.println("ABC".replace("A", "Z"));
         System.out.println("ABC".replace('A', 'Z'));
 
         // ... StringBiulder
@@ -102,15 +102,15 @@ public class HelloWorld {
 
         // ... If condition
         int age = 17;
-        if(age > 18){ // amžiaus daugiau nei 18-niolika
+        if (age > 18) { // amžiaus daugiau nei 18-niolika
             System.out.println("Galima pirkti alkoholį");
         } else { // ... jei ne
             System.out.println("Negalima pirkti alkoholio");
         }
 
-        if(age > 18){ // amžiaus daugiau nei 18-niolika
+        if (age > 18) { // amžiaus daugiau nei 18-niolika
             System.out.println("Galima pirkti alkoholį");
-        } else if(age == 18) {
+        } else if (age == 18) {
             System.out.println("Galima pirkti alkoholį");
         } else { // ... jei ne
             System.out.println("Negalima pirkti alkoholio");
@@ -118,16 +118,16 @@ public class HelloWorld {
 
         // ... panaikingame else if panaudoję >= (daugiau arba lygu)
         // (age > 18 || age = 18) == (age >= 18)
-        if(age >= 18){ // amžiaus daugiau nei 18-niolika
+        if (age >= 18) { // amžiaus daugiau nei 18-niolika
             System.out.println("Galima pirkti alkoholį");
         } else { // ... jei ne
             System.out.println("Negalima pirkti alkoholio");
         }
 
         age = 21;
-        if(age < 18){
+        if (age < 18) {
             System.out.println("Negalima nei prikti nei gerti");
-        } else if(age >= 18 && age < 21){
+        } else if (age >= 18 && age < 21) {
             System.out.println("Galima gerti, bet negalima pirkti");
         } else {
             System.out.println("Galima gerti, ir pirkti");
@@ -136,7 +136,7 @@ public class HelloWorld {
         // ... switch()
         System.out.println("... switch()");
         String name = "Petras";
-        switch (name){ // char, byte, short, int, enum, String
+        switch (name) { // char, byte, short, int, enum, String
             case "Jonas":
                 System.out.println("Sveikas Jonai");
                 break; // būtinas jei norime tik vieną
@@ -150,22 +150,23 @@ public class HelloWorld {
         double d3 = 55.5;
         // switch(d3){ } // ... Incompatible types. Found: 'double', required: 'char, byte, short, int, Character, Byte, Short, Integer, String, or an enum'
         int i4 = 5;
-        switch (i4){
-            case (short)5: System.out.println("Shortai!");
+        switch (i4) {
+            case (short) 5:
+                System.out.println("Shortai!");
         }
 
         // ... Loops
         // ... while
         System.out.println("... while");
         int counter = 5;
-        while(counter > 0){
+        while (counter > 0) {
             System.out.println(counter);
             counter = counter - 1;
         }
         // while(true){}
 
         int x1 = 5;
-        for( ; x1 > 0; ){
+        for (; x1 > 0; ) {
             System.out.println(x1);
             // ..
             // ..
@@ -177,9 +178,9 @@ public class HelloWorld {
         //     System.out.println("Labas");
         // }
 
-        for(x1 = 5; x1 > 0 ; )
+        for (x1 = 5; x1 > 0; )
             System.out.println("Labas : " + --x1);
-            System.out.println("Labas už ciklo"); // nėra ciklo dalis
+        System.out.println("Labas už ciklo"); // nėra ciklo dalis
 
         for (int k = 0; k < 5; k++) {
             System.out.println(">");
@@ -211,17 +212,18 @@ public class HelloWorld {
 
         // ... for ciklo sudėtingesnė sintaksė
         int abc = 5;
-        for (int k = 0, k2 = 0; k < 5 && k2 < 9 ; k++, k2++, abc++) { }
+        for (int k = 0, k2 = 0; k < 5 && k2 < 9; k++, k2++, abc++) {
+        }
 
         // ... enhanced for
         System.out.println("... enhanced for");
-        String[] myAwesomeArray = { "1", "2", "3", "4", "5" }; // masyvo deklaracija ir inicializacija
+        String[] myAwesomeArray = {"1", "2", "3", "4", "5"}; // masyvo deklaracija ir inicializacija
         for (String manoPasirinktasTarpinioKintamojoVardas : myAwesomeArray) {
             System.out.println(manoPasirinktasTarpinioKintamojoVardas);
         }
 
         // ... equivalent to enhanced for
-        for(int u = 0; u < myAwesomeArray.length; u++){
+        for (int u = 0; u < myAwesomeArray.length; u++) {
             System.out.println(myAwesomeArray[u]);
         }
 
@@ -243,11 +245,11 @@ public class HelloWorld {
 
         // ... break and continue
         System.out.println("... break and continue");
-        int[] intArr = { 1, 15, 256, 5465, 121, 548, -55, 549, -5155156 };
+        int[] intArr = {1, 15, 256, 5465, 121, 548, -55, 549, -5155156};
 
         // ... find first negative number
         for (int k = 0; k < intArr.length; k++) {
-            if(intArr[k] < 0){
+            if (intArr[k] < 0) {
                 System.out.println(intArr[k]);
                 break;
             }
@@ -257,13 +259,13 @@ public class HelloWorld {
 
         // ... find all
         for (int k = 0; k < intArr.length; k++) {
-            if(intArr[k] < 0) System.out.println(intArr[k]);
+            if (intArr[k] < 0) System.out.println(intArr[k]);
         }
 
         // ... continue
         System.out.println("... continue");
         for (int k = 0; k < intArr.length; k++) {
-            if(intArr[k] < 0) {
+            if (intArr[k] < 0) {
                 System.out.println("Neigiamas: " + intArr[k]);
                 continue;
             }
@@ -273,7 +275,7 @@ public class HelloWorld {
 
         // ... arrays
         System.out.println("... arrays");
-        int[] intArr2 = { 1, 15 }; // length == 2, tačiau nariai tik 0, 1
+        int[] intArr2 = {1, 15}; // length == 2, tačiau nariai tik 0, 1
         for (int k = 0; k < 5; k++) {
             // java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
             // System.out.println(intArr2[k]);
@@ -293,8 +295,8 @@ public class HelloWorld {
         // ... array initialization:
         int[] intArr21 = new int[2];
         intArr21[0] = 5; // adding a variable
-        int[] intArr22 = new int[]{ 1, 15 }; // + declaration of internal variables
-        int[] intArr23 = { 1, 15 }; // + declaration of internal variables
+        int[] intArr22 = new int[]{1, 15}; // + declaration of internal variables
+        int[] intArr23 = {1, 15}; // + declaration of internal variables
 
         // String[] s = new String[5];
         // s = new int[5];
@@ -303,11 +305,11 @@ public class HelloWorld {
         // double[] dArr = fArr; // negalime priskirti kito tipo masyvo
 
         double d6 = 99.9;
-        fArr[0] = (float)d6; // galime su castingu priskirti
+        fArr[0] = (float) d6; // galime su castingu priskirti
 
         // ... Išvardinti kas antrą narį.
         System.out.println("Išvardinti kas antrą narį.");
-        String[] myAwesomeArray2 = { "1", "2", "3", "4", "5" }; // masyvo deklaracija ir inicializacija
+        String[] myAwesomeArray2 = {"1", "2", "3", "4", "5"}; // masyvo deklaracija ir inicializacija
         for (int k = 0; k < myAwesomeArray2.length; k += 2) {
             System.out.println(myAwesomeArray2[k]);
         }
@@ -319,8 +321,8 @@ public class HelloWorld {
 
         // ... Išvardinti narius iš dviejų vienodo ilgio masyvų vienu ciklu.
         System.out.println("Išvardinti narius iš dviejų vienodo ilgio masyvų vienu ciklu.");
-        String[] myAwesomeArray3 = { "1", "2", "3", "4", "5" };
-        String[] myAwesomeArray4 = { "5", "4", "3", "2", "1" };
+        String[] myAwesomeArray3 = {"1", "2", "3", "4", "5"};
+        String[] myAwesomeArray4 = {"5", "4", "3", "2", "1"};
         System.out.println("myAwesomeArray3.length: " + myAwesomeArray3.length);
         // for (int k = 0; k < myAwesomeArray3.length; k++) {
         //     System.out.println(myAwesomeArray3[k] + " -- " + myAwesomeArray4[k]);
@@ -331,17 +333,17 @@ public class HelloWorld {
         }
 
         // ... filtravimas
-        int[] intArr3 = { 1, 4, 15, 256, 0, 5465, 121, 548, -55, 549, -5155156, 22, 12 };
+        int[] intArr3 = {1, 4, 15, 256, 0, 5465, 121, 548, -55, 549, -5155156, 22, 12};
         for (int k = 0; k < intArr3.length; k++) {
             // jei liekana dalinant iš dviejų (ne)lygi nuliui (a.k.a (ne)lyginis)
-            if (intArr3[k] % 2 != 0){
+            if (intArr3[k] % 2 != 0) {
                 System.out.println("intArr3[" + k + "]: " + intArr3[k]);
             }
         }
 
         // ... kaip iš jau turimo masyvo viršuje, pasigaminti antrą masyvą, kuris turėtų tik lyginius skaičius.
         // ... suskaičiuojame kiek yra lyginių skaičių
-        int[] intArr4 = { 4, 1, 2, 5, 6 };
+        int[] intArr4 = {4, 1, 2, 5, 6};
         int evenCounter = 0;
         for (int k = 0; k < intArr4.length; k++) {
             if (intArr4[k] % 2 == 0) evenCounter++;
@@ -364,7 +366,7 @@ public class HelloWorld {
 
         String[] sArr = {"A", "B", "C"};
         System.out.println(Arrays.toString(sArr));
-        for (String s: sArr) {
+        for (String s : sArr) {
             System.out.println("-->" + s);
         }
 
@@ -397,13 +399,13 @@ public class HelloWorld {
         // System.out.println("Contents of the array are: "+ Arrays.toString(myArray6));
 
         // ... sprendžiame lyginių skaičių išfiltravimo užduotį "hackiniu" būdu:
-        int[] intArr5 = { 4, 1, 2, 0, 6 };
+        int[] intArr5 = {4, 1, 2, 0, 6};
         //...
-        int[] filtruotasMasyvas = { 4, 2, 0, 6, -1 };
-        System.out.println("Contents of the array are: "+ Arrays.toString(filtruotasMasyvas));
+        int[] filtruotasMasyvas = {4, 2, 0, 6, -1};
+        System.out.println("Contents of the array are: " + Arrays.toString(filtruotasMasyvas));
         int counter2 = 0;
         for (int k = 0; k < filtruotasMasyvas.length; k++) {
-            if(filtruotasMasyvas[k] != -1){
+            if (filtruotasMasyvas[k] != -1) {
                 counter2++;
             } else {
                 break;
@@ -412,7 +414,7 @@ public class HelloWorld {
         System.out.println("Kiek buvo išfiltruota: " + counter2);
 
         // ... narių apkeitimas: kaip padaryti, kad "A", "B", "C", "D" taptų "A", "C", "B", "D"
-        String[] arrTwoItems = { "A", "B", "C", "D" };
+        String[] arrTwoItems = {"A", "B", "C", "D"};
 
         // ... pradėkime nuo paprastesnio varianto
         // ... swap - apkeitimas kintamūjų
@@ -429,7 +431,7 @@ public class HelloWorld {
         // ... grįžtame prie originalios problemos
         int originalPosition = 1;
         int newPosition = 2;
-        String [] myArray = {"A", "B", "C", "D"};
+        String[] myArray = {"A", "B", "C", "D"};
         String temp = myArray[originalPosition];
         myArray[originalPosition] = myArray[newPosition];
         myArray[newPosition] = temp;
@@ -438,14 +440,14 @@ public class HelloWorld {
         // ... rikiavimas (bubble sort algoritmas)
         System.out.println("... rikiavimas (bubble sort algoritmas)");
         // int[] intArr6 = { 4, 1, 2, 0, 6, 3 }; // rezultatas turėtų būti: 0, 1, 2, 4, 6
-        int[] intArr6 = { 5, 4, 3, 2, 1 };
+        int[] intArr6 = {5, 4, 3, 2, 1};
         System.out.println("Prieš rikiavimą: " + Arrays.toString(intArr6));
         int iterationCounter = 0, swapCounter = 0;
 
         for (int k = 0; k < intArr6.length - 1; k++) {
-            for(int kidx = 0; kidx < intArr6.length - 1 - k; kidx++) {
+            for (int kidx = 0; kidx < intArr6.length - 1 - k; kidx++) {
                 iterationCounter++;
-                if(intArr6[kidx] > intArr6[kidx + 1]){
+                if (intArr6[kidx] > intArr6[kidx + 1]) {
                     swapCounter++;
                     int temporary = intArr6[kidx + 1];
                     intArr6[kidx + 1] = intArr6[kidx];
@@ -460,11 +462,11 @@ public class HelloWorld {
 
         // ... linijinė paieška
         System.out.println(" ... linijinė paieška");
-        String[] arrOfStrings = { "Mindaugas", "Petras", "Tomas", "Antanas" };
+        String[] arrOfStrings = {"Mindaugas", "Petras", "Tomas", "Antanas"};
         String paieškomasis = "Antanas";
         boolean atsakymas = false;
         for (int k = 0; k < arrOfStrings.length; k++) {
-            if(arrOfStrings[k].equals(paieškomasis)) {
+            if (arrOfStrings[k].equals(paieškomasis)) {
                 atsakymas = true;
             }
         }
@@ -477,8 +479,8 @@ public class HelloWorld {
         _2dArr1[1][0] = 3;
         _2dArr1[1][1] = 4;
 
-        int[][] _2dArr2 = { {1, 2},
-                            {3, 4} };
+        int[][] _2dArr2 = {{1, 2},
+                {3, 4}};
 
         // ... pasiekiame kiekvieną "giliausią narį"
         for (int k = 0; k < _2dArr1.length; k++) {
@@ -495,7 +497,7 @@ public class HelloWorld {
 
         // ... Iš 2D masyvo padaryti 1D ir pan
         // ... (darykime prielaidą, kad vienodo ilgio visi sub-masyvai)
-        int[][] _2dArr3 = { {1, 2}, {3, 4} }; // { 1, 2, 3, 4}
+        int[][] _2dArr3 = {{1, 2}, {3, 4}}; // { 1, 2, 3, 4}
         int len = _2dArr3.length * _2dArr3[0].length;
         int[] _1dFrom2d = new int[len];
 
@@ -553,7 +555,7 @@ public class HelloWorld {
         try {
             // ... pavojingas kodas
             res = 1 / 0; // ArithmeticException: / by zero
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Įvyko klaida!");
         } finally {
             // finally blokas bus iškviestas, net jei darysime res = 1 / 1;
@@ -632,7 +634,7 @@ public class HelloWorld {
             String fileLine = "\nappended file line";
             bufferedWriter.write(fileLine);
             bufferedWriter.close();
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -671,7 +673,7 @@ public class HelloWorld {
                 System.out.println(inputLine);
                 inputLine = in.readLine();
             }
-        } catch(MalformedURLException e){
+        } catch (MalformedURLException e) {
             e.getStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
@@ -684,15 +686,18 @@ public class HelloWorld {
 
     // Exception catching order
     public static void u(int param) throws Exception {
-        switch (param){
-            case 1: throw new Exception();
-            case 2: throw new IOException();
-            case 3: throw new FileNotFoundException();
+        switch (param) {
+            case 1:
+                throw new Exception();
+            case 2:
+                throw new IOException();
+            case 3:
+                throw new FileNotFoundException();
         }
     }
 
     // Checked vs. unchecked exceptions
-    public static void checked(){
+    public static void checked() {
         throw new ArithmeticException("Aritmetikos klaida");
     }
 
@@ -700,7 +705,7 @@ public class HelloWorld {
         throw new IOException("IO klaida");
     }
 
-    public static void swapPair(int[] arr){
+    public static void swapPair(int[] arr) {
         int tmp = arr[0];
         arr[0] = arr[1];
         arr[1] = tmp;
@@ -712,7 +717,7 @@ public class HelloWorld {
     //     System.out.println("bandomsisTriušis: " + i);
     // }
 
-    public static void addOne(int i){
+    public static void addOne(int i) {
         ++i;
         System.out.println("bandomsisTriušis: " + i);
     }
@@ -726,11 +731,11 @@ public class HelloWorld {
     }
 
     public static int fibonacciIterative(int n) {
-        if(n <= 1) return n;
+        if (n <= 1) return n;
         int fib = 1;
         int prevFib = 1;
 
-        for(int i = 2; i < n; i++) {
+        for (int i = 2; i < n; i++) {
             int temp = fib;
             fib += prevFib;
             prevFib = temp;
@@ -738,15 +743,15 @@ public class HelloWorld {
         return fib;
     }
 
-    public static int factorialRecursive(int i){
-        if(i <= 1) return 1; // base case
+    public static int factorialRecursive(int i) {
+        if (i <= 1) return 1; // base case
         return i * factorialRecursive(i - 1); // recursive step
     }
 
-    public static int factorialIterative(int i){
+    public static int factorialIterative(int i) {
         // 4 * 3 * 2 * 1 = 4!
         int res = 1, stopCondition = i;
-        for (int j = 0; j < stopCondition; j++){
+        for (int j = 0; j < stopCondition; j++) {
             res = res * i; // 4 * 3
             i--;
         }
@@ -756,26 +761,26 @@ public class HelloWorld {
     // Funkcijos deklaracija:
     // ... be parametrų f-ja
     // ... nieko negražina, tik padaro side-effect
-    public static void mySecondFunction(){
+    public static void mySecondFunction() {
         System.out.println("Side-effect");
         // return
     }
 
     // ... overloaded functions
-    public static void sum(int i, int j){
+    public static void sum(int i, int j) {
         System.out.println("Suma:" + (i + j));
     }
 
-    public static void sum(double d1, double d2){
+    public static void sum(double d1, double d2) {
         System.out.println("Suma:" + (d1 + d2));
     }
 
     // ... pure function.
-    public static long sum(long l1, long l2){
+    public static long sum(long l1, long l2) {
         return l1 + l2;
     }
 
-    public static void myThirdFunction2(int i, int j){
+    public static void myThirdFunction2(int i, int j) {
         System.out.println("Suma:" + (i + j));
     }
 }

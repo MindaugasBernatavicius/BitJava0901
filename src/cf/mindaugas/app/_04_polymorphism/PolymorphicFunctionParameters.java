@@ -1,7 +1,7 @@
 package cf.mindaugas.app._04_polymorphism;
 
 public class PolymorphicFunctionParameters {
-    static void doSomethingWithPersonx(PersonX p){
+    static void doSomethingWithPersonx(PersonX p) {
         p.doSomething();
     }
 
@@ -12,6 +12,9 @@ public class PolymorphicFunctionParameters {
 }
 
 class PersonX {
-    public void doSomething(){}
+    public void doSomething() {
+    }
 }
-class EmployeeX extends PersonX { }
+
+class EmployeeX extends PersonX {
+}

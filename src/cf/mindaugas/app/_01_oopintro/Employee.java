@@ -8,7 +8,8 @@ public class Employee {
 
     // ... overloaded konstruktorius
     // ... be parametrų
-    public Employee(){}
+    public Employee() {
+    }
 
     // ... parametrizuotas konstruktorius
     public Employee(String name, String surname) {
@@ -16,15 +17,15 @@ public class Employee {
         this.surname = surname;
     }
 
-    public void setAge(int age){
-        if(age <= 0 || age > 125){
+    public void setAge(int age) {
+        if (age <= 0 || age > 125) {
             System.out.println("Please provide valid age!");
         } else {
             this.age = age;
         }
     }
 
-    public int getAge(){
+    public int getAge() {
         return this.age;
     }
 

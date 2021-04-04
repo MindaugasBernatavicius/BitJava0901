@@ -39,8 +39,8 @@ class DynamicArray<T> {
     }
 
     // add
-    public void add(T item){
-        if(counter == this.arr.length){
+    public void add(T item) {
+        if (counter == this.arr.length) {
             T[] tmp = this.arr;
             this.arr = (T[]) new Object[counter + 1];
             for (int i = 0; i < tmp.length; i++) {

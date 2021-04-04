@@ -12,17 +12,17 @@ public class App {
                 new Employee(19, 700),
                 new Employee(29, 1200)
         };
-       // System.out.println("Before sorting: " + Arrays.toString(bitEmployees));
-       // Arrays.sort(bitEmployees);
-       // System.out.println("After sorting: " + Arrays.toString(bitEmployees));
+        // System.out.println("Before sorting: " + Arrays.toString(bitEmployees));
+        // Arrays.sort(bitEmployees);
+        // System.out.println("After sorting: " + Arrays.toString(bitEmployees));
 
-       System.out.println("-----------------------------------------------");
+        System.out.println("-----------------------------------------------");
 
         // System.out.println("Before sorting: " + Arrays.toString(bitEmployees));
         // Arrays.sort(bitEmployees, new EmployeeReverseComparator());
         // System.out.println("After sorting: " + Arrays.toString(bitEmployees));
 
-       System.out.println("-----------------------------------------------");
+        System.out.println("-----------------------------------------------");
 
         // System.out.println("Before sorting: " + Arrays.toString(bitEmployees));
         // Arrays.sort(bitEmployees, Collections.reverseOrder());
@@ -34,7 +34,7 @@ public class App {
         Arrays.sort(bitEmployees, new Comparator() {
             @Override
             public int compare(Object o1, Object o2) {
-                return -1 * Integer.compare(((Employee)o1).getSalary(), ((Employee)o2).getSalary());
+                return -1 * Integer.compare(((Employee) o1).getSalary(), ((Employee) o2).getSalary());
             }
         });
         System.out.println("After sorting: " + Arrays.toString(bitEmployees));
@@ -76,13 +76,13 @@ class Employee implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        return Integer.compare(this.salary, ((Employee)o).salary);
+        return Integer.compare(this.salary, ((Employee) o).salary);
     }
 }
 
 class EmployeeReverseComparator implements Comparator {
     @Override
     public int compare(Object o1, Object o2) {
-        return -1 * Integer.compare(((Employee)o1).getSalary(), ((Employee)o2).getSalary());
+        return -1 * Integer.compare(((Employee) o1).getSalary(), ((Employee) o2).getSalary());
     }
 }

@@ -22,7 +22,7 @@ public class MapsExample {
         // 2. Looping over map
         System.out.println(empMap.entrySet());
 
-        for (Map.Entry<String,String> entry : empMap.entrySet())
+        for (Map.Entry<String, String> entry : empMap.entrySet())
             System.out.println(entry.getKey() + " : " + entry.getValue());
 
         // 3. Get value by key (search)
@@ -38,9 +38,9 @@ public class MapsExample {
 
         System.out.println("Tm: " + tm);
 
-        Set<Map.Entry<String, String>> entrySet =  tm.entrySet();
+        Set<Map.Entry<String, String>> entrySet = tm.entrySet();
         System.out.println("Es: " + entrySet);
-        for (Map.Entry<String, String> entry : entrySet){
+        for (Map.Entry<String, String> entry : entrySet) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
             // entrySet.remove(entry); // ConcurrentModificationException due to internal iterator
         }

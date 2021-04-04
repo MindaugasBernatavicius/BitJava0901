@@ -94,14 +94,14 @@ public class App {
         stackOfEmpl.push(new Employee(15, 600));
         stackOfEmpl.push(new Employee(25, 6564));
 
-        while(!stackOfEmpl.empty()) {
+        while (!stackOfEmpl.empty()) {
             System.out.println(stackOfEmpl.pop());
         }
 
     }
 }
 
-class Employee implements Comparable<Employee>{
+class Employee implements Comparable<Employee> {
     private int age;
     private int salary;
 

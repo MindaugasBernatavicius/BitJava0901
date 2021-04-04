@@ -5,7 +5,7 @@ public class Main {
         Person p1 = new Person(15, "Mindaugas");
 
         // 0. Primityviausias būdas išspausdinti objekto vidurius:
-        System.out.println("Objekto viduriai: " + p1.getName() + " : " +  p1.getAge());
+        System.out.println("Objekto viduriai: " + p1.getName() + " : " + p1.getAge());
 
         // 1.
         System.out.println("Objekto viduriai: " + p1);
@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Objekto viduriai: " + e1);
 
         // 3.
-        Janitor j1  = new Janitor(16, "Jonas", 4654, new Broom(55.99));
+        Janitor j1 = new Janitor(16, "Jonas", 4654, new Broom(55.99));
         System.out.println("Objekto viduriai: " + j1);
 
         // 4. Init flight object
@@ -23,7 +23,7 @@ public class Main {
         Person p4 = new Person(66, "Petras");
 
         Employee e3 = new Employee(22, "Jonas", 14666);
-        Employee e4  = new Employee(58, "Petras", 456465);
+        Employee e4 = new Employee(58, "Petras", 456465);
 
         Flight f1 = new Flight(2, new Person[]{p3, p4}, new Employee[]{e3, e4});
     }
@@ -79,8 +79,8 @@ class Employee extends Person {
     @Override
     public String toString() {
         return "{ badgeId : " + this.getBadgeId()
-            + ", name : " + this.getName()
-            + ", age : " + this.getAge() + " }";
+                + ", name : " + this.getName()
+                + ", age : " + this.getAge() + " }";
     }
 }
 
@@ -103,17 +103,19 @@ class Janitor extends Employee {
     @Override
     public String toString() {
         return "{ name : " + this.getName()
-            + ", age: " + this.getAge()
-            + ", badgeId : " + this.getBadgeId()
-            + ", broom : " + this.broom + " }";
+                + ", age: " + this.getAge()
+                + ", badgeId : " + this.getBadgeId()
+                + ", broom : " + this.broom + " }";
     }
 }
 
 class Broom {
     private double price;
+
     public Broom(double price) {
         this.price = price;
     }
+
     @Override
     public String toString() {
         return "{ price : " + price + "}";

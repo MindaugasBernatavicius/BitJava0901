@@ -27,8 +27,8 @@ public class Main {
         System.out.println("Darbuotojo vardas: " + employee2.name);
         System.out.println("Darbuotojo vardas: " + employee3.name);
         System.out.println("Darbuotojo vardas: " + employee4.name
-                                    + ", pavardė " + employee4.surname
-                                    + ", amžius " + employee4.getAge());
+                + ", pavardė " + employee4.surname
+                + ", amžius " + employee4.getAge());
 
 
         // Objektų masyvai

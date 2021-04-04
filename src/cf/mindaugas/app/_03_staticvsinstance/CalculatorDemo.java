@@ -10,12 +10,13 @@ public class CalculatorDemo {
 }
 
 class StaticCalculator {
-    public static int add(int i, int j){
+    public static int add(int i, int j) {
         return i + j;
     }
 }
+
 class NonstaticCalculator {
-    public int add(int i, int j){
+    public int add(int i, int j) {
         return i + j;
     }
 }

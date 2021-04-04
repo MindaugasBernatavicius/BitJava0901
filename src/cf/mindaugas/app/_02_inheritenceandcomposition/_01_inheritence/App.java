@@ -52,7 +52,7 @@ class Employee extends Person {
     public String toString() {
         return "{" +
                 "badgeId=" + badgeId
-                 + super.toString() +
+                + super.toString() +
                 "}";
     }
 }

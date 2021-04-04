@@ -38,7 +38,8 @@ class Engine {
 class Car {
     private Engine engine;
 
-    public Car(){}
+    public Car() {
+    }
 
     public Car(Engine engine) {
         this.engine = engine;
